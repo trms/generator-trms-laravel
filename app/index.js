@@ -12,10 +12,35 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the well-made' + chalk.red('TrmsLaravel') + ' generator!'
-    ));
+    
+    this.log(chalk.yellow('                           MMMMMM                           '));
+    this.log(chalk.yellow('                          MMMMMMMM                          '));
+    this.log(chalk.yellow('                         MMMMMMMMMM                         '));
+    this.log(chalk.yellow('                         MMMMMMMMMM                         '));
+    this.log(chalk.yellow('                         MMMMMMMMMM                         '));
+    this.log(chalk.yellow('                          MMMMMMMM                          '));
+    this.log(chalk.yellow('    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM      '));
+    this.log(chalk.yellow('    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM      '));
+    this.log(chalk.yellow('    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM      '));
+    this.log(chalk.yellow('    8OOOOOOOOOOOOOOOMMMMMMMMMMMMMMMMMMOOOOOOOOOOOOOOO8       '));
+    this.log(chalk.yellow('                    MMMMMMMMMMMMMMMMMM                      '));
+    this.log(chalk.yellow('                    MMMMMMMMMMMMMMMMMM                      '));
+    this.log(chalk.yellow('                     ~MMMMMMMMMMMMMMM~                      '));
+    this.log(chalk.yellow('                      MMMMMMMMMMMMMMM                       '));
+    this.log(chalk.yellow('                      MMMMMMMMMMMMMMM                       '));
+    this.log(chalk.yellow('              MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM               '));
+    this.log(chalk.yellow('             .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.              '));
+    this.log(chalk.yellow('             MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM             '));
+    this.log(chalk.yellow('            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM             '));
+    this.log(chalk.yellow('            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM            '));
+    this.log(chalk.yellow('           MMMMMMMMMM                  MMMMMMMMM           '));
+    this.log(chalk.yellow('           MMMMMMMMM                    MMMMMMMMM           '));
+    this.log(chalk.yellow('          MMMMMMMMM~                    ~MMMMMMMMM          '));
+    this.log(chalk.yellow('    MMMMMMMMMMMMMMM.                     .MMMMMMMMMMMMM     '));
+    this.log(chalk.yellow('    MMMMMMMMMMMMMM.                      .MMMMMMMMMMMMM     '));
+
+
+    
 
 
     var prompts = [
