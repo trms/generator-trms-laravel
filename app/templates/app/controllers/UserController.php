@@ -1,6 +1,6 @@
 <?php
 
-use CrowWing\Forms\UserForm;
+use Validators\Forms\UserForm;
 
 class UserController extends \BaseController {
 

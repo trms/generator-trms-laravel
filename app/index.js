@@ -13,7 +13,6 @@ module.exports = yeoman.generators.Base.extend({
     var done = this.async();
 
     
-    this.log(chalk.yellow('                           MMMMMM                           '));
     this.log(chalk.yellow('                          MMMMMMMM                          '));
     this.log(chalk.yellow('                         MMMMMMMMMM                         '));
     this.log(chalk.yellow('                         MMMMMMMMMM                         '));
@@ -40,16 +39,10 @@ module.exports = yeoman.generators.Base.extend({
     this.log(chalk.yellow('    MMMMMMMMMMMMMM.                      .MMMMMMMMMMMMM     '));
 
 
-    
+    this.log(chalk.green('Answer the following questions to scaffold your laravel project'));    
 
 
     var prompts = [
-    {
-      type: 'confirm',
-      name: 'clean',
-      message: 'Would you like to Begin?',
-      default: true
-    },
     {
       type: 'input',
       name:'projectname',
@@ -156,6 +149,7 @@ module.exports = yeoman.generators.Base.extend({
 
   stubIndex: function(){
     
+    // basic template layout
     this.fs.copyTpl(
       this.templatePath('app/views/layouts/index.blade.php'),
       this.destinationPath('app/views/layouts/index.blade.php'),
@@ -164,11 +158,13 @@ module.exports = yeoman.generators.Base.extend({
       }
     );
 
+    // scss style
     this.fs.copyTpl(
       this.templatePath('app/style/main.scss'),
       this.destinationPath('app/style/main.scss')
     );
 
+    // basic routes
     this.fs.copyTpl(
       this.templatePath('app/routes.php'),
       this.destinationPath('app/routes.php'),
@@ -179,6 +175,7 @@ module.exports = yeoman.generators.Base.extend({
       }
     );
 
+    // database config file
     this.fs.copyTpl(
       this.templatePath('app/config/database.php'),
       this.destinationPath('app/config/database.php'),
@@ -189,6 +186,25 @@ module.exports = yeoman.generators.Base.extend({
       }
     );
 
+    // form validators classes
+    this.fs.copyTpl(
+      this.templatePath('app/Validators/Forms/FormValidationException.php'),
+      this.destinationPath('app/Validators/Forms/FormValidationException.php')
+    );
+    this.fs.copyTpl(
+      this.templatePath('app/Validators/Forms/FormValidator.php'),
+      this.destinationPath('app/Validators/Forms/FormValidator.php')
+    );
+    this.fs.copyTpl(
+      this.templatePath('app/Validators/Forms/UserForm.php'),
+      this.destinationPath('app/Validators/Forms/UserForm.php')
+    );
+
+    // adds the autoloader for the Validators folder
+    this.fs.copyTpl(
+      this.templatePath('composer.json'),
+      this.destinationPath('composer.json')
+    );
 
   },
 
@@ -296,6 +312,16 @@ module.exports = yeoman.generators.Base.extend({
       this.destinationPath('app/views/password/reset.blade.php')
     );
 
+    // mailer config
+    this.fs.copyTpl(
+      this.templatePath('app/config/mail.php'),
+      this.destinationPath('app/config/mail.php')
+    );
+    this.fs.copyTpl(
+      this.templatePath('app/config/services.php'),
+      this.destinationPath('app/config/services.php')
+    );
+
   },
 
 
@@ -399,11 +425,11 @@ module.exports = yeoman.generators.Base.extend({
       this.spawnCommand('grunt',['combine']);
       
       if(this.includeBackup){
-        chalk.green('Requiring schickling/backup via composer');
+        this.log(chalk.green('Running Composer Install Requiring schickling/backup'));
         this.spawnCommand('composer',['require','schickling/backup'])
       } 
       else{
-        chalk.green('Running Composer Install');
+        this.log(chalk.green('Running Composer Install'));
         this.spawnCommand('composer',['install']);
       }
 
