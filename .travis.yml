@@ -1,0 +1,6 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-trms-laravel' ]; then cd .. && eval "mv $currentfolder generator-trms-laravel" && cd generator-trms-laravel; fi
