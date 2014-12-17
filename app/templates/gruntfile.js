@@ -36,6 +36,8 @@ module.exports = function(grunt) {
         }
       },
 
+      // <% if (includeAdmin) { %>
+
       admin: {                            // Target
         options: {                       // Target options
           style: 'expanded'
@@ -45,6 +47,8 @@ module.exports = function(grunt) {
           'public/style/admin.css': 'app/style/admin.scss'       // 'destination': 'source'
         }
       }
+
+      // <% } %>
 
     },
 
@@ -64,6 +68,8 @@ module.exports = function(grunt) {
 	      dest: 'public/js/vendor.js',
 	    },
 
+      // <%% if (this.includeAdmin == true) { %>
+
       admin: {
         src: [
 
@@ -74,12 +80,17 @@ module.exports = function(grunt) {
         ],
         dest: 'public/js/vendor.js',
       },
+
+      // <%% } %>
     },
 
     concat_css: {
       options: {
         // Task-specific options go here.
       },
+
+      // <%% if (this.includeAdmin == true) { %>
+
       admin: {
         src: [
 
@@ -91,6 +102,8 @@ module.exports = function(grunt) {
           ],
         dest: "public/style/adminVendor.css"
       },
+
+      // <%% } %>
       main: {
         src: [
           

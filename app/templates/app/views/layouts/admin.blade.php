@@ -34,6 +34,9 @@
                   </div>
                </div>
                <div class="col-md-3">
+
+               <% if (includeUsers) { %>
+
                @if(Auth::check())
                   <div class="navbar navbar-inverse" role="banner">
                       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -49,6 +52,8 @@
                       </nav>
                   </div>
                 @endif  
+
+              <% } %>
                </div>
             </div>
          </div>
@@ -62,13 +67,20 @@
                 <ul class="nav collapse in">
                     <!-- Main menu -->
 
-                    <li><a href="{{url('admin/department')}}"><i class="glyphicon glyphicon-briefcase"></i> Departments</a></li>
-                    <li><a href="{{url('admin/faq')}}"><i class="glyphicon glyphicon-question-sign"></i> FAQ</a></li>
-                    <li><a href="{{url('admin/survey/1/edit')}}"><i class="glyphicon glyphicon-stats"></i> Survey URL</a></li>
-                    <li><a href="{{url('admin/website/1/edit')}}"><i class="glyphicon glyphicon-tree-conifer"></i> Website URL</a></li>
+                    <li><a href="{{url('admin')}}"><i class="glyphicon glyphicon-briefcase"></i> Admin Index</a></li>
                     
+                    
+                    <% if (includeBackup) { %>
+
                     <li><a href="{{url('admin/backup')}}"><i class="glyphicon glyphicon-cog"></i> Backup Data</a></li>
+
+                    <% } %>
+                    
+                    <% if (includeUsers) { %>
+
                     <li><a href="{{url('admin/users')}}"><i class="glyphicon glyphicon-user"></i> Admin Users</a></li>
+                    
+                    <% } %>
 
                    
                 </ul>
