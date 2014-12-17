@@ -433,5 +433,7 @@ module.exports = yeoman.generators.Base.extend({
         this.spawnCommand('composer',['install']);
       }
 
+      this.spawnCommand('php',['artisan','key:generate']);
+
   }
 });
