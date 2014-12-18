@@ -1,7 +1,7 @@
 @extends('layouts/admin')
 
 @section('title')
-Donor List
+Create a User
 @stop
 
 		

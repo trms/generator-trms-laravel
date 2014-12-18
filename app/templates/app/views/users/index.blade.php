@@ -4,7 +4,7 @@
 
 
 @section('title')
-Donor List
+Users
 @stop
 
 @section('action')

@@ -23,13 +23,27 @@ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-trms-laravel from npm, run:
+To install generator-trms-laravel from npm navigate to the generator-trms-laravel directory and run:
 
 ```bash
-npm install -g generator-trms-laravel
+npm link
 ```
 
-Finally, initiate the generator:
+You'll need to have composer installed in order to install laravel
+
+```bash
+curl -sS https://getcomposer.org/installer | php
+```
+
+and then make sure composer is in your path
+
+```bash
+mv composer.phar /usr/local/bin/composer
+```
+Note: If the above fails due to permissions, run the mv line again with sudo.
+
+
+Finally in an empty folder for your project, initiate the generator:
 
 ```bash
 yo trms-laravel

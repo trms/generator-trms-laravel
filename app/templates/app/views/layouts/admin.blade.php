@@ -21,7 +21,7 @@
                <div class="col-md-8">
                   <!-- Logo -->
                   <div class="logo">
-                     <h1><%= projectname %> Admin</h1>
+                     <h1><a href=""><%= projectname %> Admin</a></h1>
                   </div>
                </div>
                <div class="col-md-4">
@@ -33,7 +33,7 @@
                     </div>
                   </div>
                </div>
-               <div class="col-md-3">
+               <div class="col-md-4">
 
                <% if (includeUsers) { %>
 
