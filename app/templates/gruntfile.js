@@ -78,7 +78,7 @@ module.exports = function(grunt) {
           'bower_components/bootstrap/dist/js/bootstrap.js'
         
         ],
-        dest: 'public/js/vendor.js',
+        dest: 'public/js/adminVendor.js',
       },
 
       // <%% } %>
