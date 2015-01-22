@@ -4,7 +4,10 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"guzzlehttp/guzzle": "~5.1",
+		"schickling/backup": "0.6.*",
+		"fzaninotto/faker": "~1.4"
 	},
 	"autoload": {
 		"classmap": [
