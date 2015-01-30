@@ -142,7 +142,7 @@
          <div class="container">
          
             <div class="copy text-center">
-               Copyright 2014 <a href='http://www.trms.com'>Tightrope Media Systems</a>
+               Copyright 2014 <a href='http://www.trms.com' target="_blank">Tightrope Media Systems</a>
             </div>
             
          </div>

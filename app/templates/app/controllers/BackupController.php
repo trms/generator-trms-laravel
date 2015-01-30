@@ -1,5 +1,6 @@
 <?php
 
+use Chumper\Zipper\Zipper;
 
 class BackupController extends Controller {
 
@@ -22,7 +23,9 @@ class BackupController extends Controller {
 	public function store()
 	{
 
-		Artisan::call('db:backup',['filename'=>public_path()."/data/MySqlBackup.sql"]);
+		Artisan::call('db:backup',['filename'=>"data/MySqlBackup.sql"]);
+
+		$zipper = new Zipper;
 
 		return View::make('backup.index',array('backedUp'=>true))->with('message', 'Backup Created');
 	}

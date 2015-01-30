@@ -15,25 +15,67 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+
+
+
+
 <% if (includeAdmin) { %>
 
-Route::get('admin', function()
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+
+Route::group(['prefix'=>'admin'], function()
 {
-	return View::make('layouts.adminPageTemplate');
+	
+	Route::get('/',['as'=>'admin.index','uses'=>function(){
+
+		return View::make('admin.layouts.adminPageTemplate');
+
+	}]);
+
+	<% if (includeUsers) { %>
+
+	Route::resource('admin/users','UserController');
+
+	Route::resource('admin/backup','BackupController');
+
+	<% } %>
+
+	<% if (includeBackup) { %>
+
+	Route::resource('admin/backup','BackupController');
+
+	<% } %>
+
 });
 
 <% } %>
 
 
+
+
+
+
+
 <% if (includeUsers) { %>
+
+/*
+|--------------------------------------------------------------------------
+| Utility Routes
+|--------------------------------------------------------------------------
+|
+|
+*/	
 
 Route::get('login',function(){
 	return View::make('users.login');
 });
-
-Route::resource('admin/users','UserController');
-
-Route::resource('admin/backup','BackupController');
 
 Route::get('logout','AuthController@destroy');
 
@@ -45,7 +87,3 @@ Route::controller('password','RemindersController');
 
 
 
-<% if (includeBackup) { %>
-
-
-<% } %>

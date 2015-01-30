@@ -140,7 +140,7 @@ class UserController extends \BaseController {
 
 		$user->delete();
 
-		return Redirect::to('admin/users')->with('warning',"You have deleted $user->name");
+		return Redirect::to('admin/users')->with('warning',"You have deleted $user->email");
 	}
 
 

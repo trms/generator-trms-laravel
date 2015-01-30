@@ -4,11 +4,12 @@
   "dependencies": {
   	"jquery": "~2.1.1",
   	"jqueryui": "~1.11.1",
-  	"bootstrap": "~3.2.0",
+  	"bootstrap": "~3.3.2",
   	"moment": "~2.8.3",
   	"gsap": "~1.14.1",
   	"keyboard": "~1.19.1",
-    "Bootstrap-Admin-Theme-3": "https://github.com/VinceG/Bootstrap-Admin-Theme-3.git"
+    "Bootstrap-Admin-Theme-3": "https://github.com/VinceG/Bootstrap-Admin-Theme-3.git",
+    "Redactor": "https://github.com/trms/redactor_wysiwyg.git"
 
   }
 }
